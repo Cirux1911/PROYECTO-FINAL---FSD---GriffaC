@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.album {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagina {
+    width: 100%;
+    text-align: center;
+}
+
+.pagina h1 {
+    color: #888888;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.pagina h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.figuritas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.figurita {
+    background-color: #111111;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.figurita:hover {
+    transform: scale(1.03);
+}
+
+.figurita img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 220 / 260;
+    object-fit: cover;
+    background-color: #222;
+}
+
+.figurita span {
+    display: block;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+.pagina-peliculas .figurita {
+    border: 3px solid #1e3d2f; 
+}
+.pagina-peliculas .figurita span {
+    background-color: #1e3d2f;
+}
+
+.pagina-jedis .figurita {
+    border: 3px solid #00A3FF;
+}
+.pagina-jedis .figurita span {
+    background-color: #00A3FF;
+}
+
+.pagina-sith .figurita {
+    border: 3px solid #FF0000;
+}
+.pagina-sith .figurita span {
+    background-color: #FF0000;
+}
+
+.naves {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pagina-naves .figurita.grande {
+    border: 3px solid #444444;
+}
+
+.pagina-naves .figurita.grande img {
+    aspect-ratio: 400 / 230;
+}
+
+.pagina-naves .figurita.grande span {
+    background-color: #444444;
+}
+
+footer {
+    width: 100%;
+    background-color: #0a0a0a;
+    border-top: 1px solid #222222;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #666666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-buttons {
+    position: absolute;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-left { left: 40px; }
+.nav-right { right: 40px; }
+
+.btn {
+    background-color: transparent;
+    border: 2px solid #FFE81F;
+    color: #FFE81F;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: #FFE81F;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(255, 232, 31, 0.4);
+}
+
+@media (max-width: 768px) {
+    .figuritas { grid-template-columns: repeat(2, 1fr); }
+    .naves { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 15px; padding-bottom: 80px; }
+    .nav-buttons { position: static; }
+}
+
+.figurita.legendaria,
+.figurita.grande.legendaria {
+    border: 3px solid #FFD700 !important; 
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.figurita.legendaria span,
+.figurita.grande.legendaria span {
+    background-color: #FFD700 !important;
+    color: #000000; 
+}
+
+.figurita.epica {
+    border: 3px solid #A020F0 !important; 
+    box-shadow: 0 0 15px rgba(160, 32, 240, 0.6);
+}
+.figurita.epica span {
+    background-color: #A020F0 !important;
+}
